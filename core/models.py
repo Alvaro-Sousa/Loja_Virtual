@@ -6,7 +6,7 @@ class Produto (models.Model):
     preco = models.DecimalField(max_digits=8, decimal_places=2)
     categoria = models.CharField(max_length=50)
     descricao = models.TextField()
-    imagem = models.ImageField(upload_to='produtos/')
+    imagem = models.ImageField(upload_to='produtos/', max_length=300)
 
     def __str__(self):
         return self.nome

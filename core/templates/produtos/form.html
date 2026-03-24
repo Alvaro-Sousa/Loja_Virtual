@@ -3,24 +3,27 @@
 {% block title %}Formulario Produto{% endblock  %}
 
 {% block content %}
+<div class= "containerForm">
 
-{% comment %} peguei do chat tem que estudar o codigo ainda mas ta funcionando  {% endcomment %}
-<h1>
-    {% if object %}
-    Editar Produto
-    {% else %}
-    Criar Produto
-    {% endif %}
-</h1>
-
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+    {% comment %} peguei do chat tem que estudar o codigo ainda mas ta funcionando  {% endcomment %}
+    <h1>
+        {% if object %}
+        Editar Produto
+        {% else %}
+        Criar Produto
+        {% endif %}
+    </h1>
     
-    {{ form.as_p }}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        {{forms.errors}}
+        
+        <button type="submit">Salvar</button>
+    </form>
     
-    <button type="submit">Salvar</button>
-</form>
-
-<a href="{% url 'lista_produtos' %}">Voltar</a>
+    <a href="{% url 'lista_produtos' %}">Voltar</a>
+</div>
 {% endblock content %}
 

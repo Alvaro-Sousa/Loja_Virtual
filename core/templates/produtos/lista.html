@@ -5,7 +5,20 @@
 
 {%block content%}
 <div class="container">
+    
     <h1>Produtos</h1>
+
+    <nav class="menu">
+        <button type="button" id="btn-editar-modal" class="btn btn-primary">
+    Editar
+</button>  
+
+<button type="button" id="btn-excluir-modal" class="btn btn-danger" style="background:red;">
+    Excluir
+</button
+    <a href="{% url 'lista_produtos' %}">Produtos</a>
+    <a href="{% url 'criar_produto' %}">Novo Produto</a>
+</nav>
     <div class="filtro">
         <input type="text" id="filtro-nome" placeholder="Filtar por nome...">
         <select id="filtro-categoria">
@@ -18,8 +31,8 @@
     </div>
     <!-- bloc do filto de puxar dos preco-->
     <div class ="filtro-preco-range">
-        <label for="filtro-preco-range">Preço Máximo: R$ <span id="preco-range-valor">1000</span></label>
-        <input type="range" id="filtro-preco-range" min="0" max="1000" step="1" value="1000">
+        <label for="filtro-preco-range">Preço Máximo: R$ <span id="preco-range-valor">5000</span></label>
+        <input type="range" id="filtro-preco-range" min="0" max="5000" step="1" value="5000">
     </div>
     <div class ="produto-grid" id="produto-grid">
         {%for produto in produtos%}
@@ -46,7 +59,9 @@
         <p id="modal-categoria"></p>
         <p id="modal-preco"></p>
         <p  id="modal-desc"></p>
+
         <button class="modal-close" onclick="fecharModal()">Fechar</button>
+    
     </div>
 </div>
 
@@ -93,5 +108,8 @@ filtroPrecoRange.addEventListener('input', function(){
     filtroPrecoValor.textContent = filtroPrecoRange.value;
     filtrarProdutos();
 });
+
+
+
 </script>
 {%endblock%}
