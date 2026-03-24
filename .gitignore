@@ -1,0 +1,5 @@
+venv/
+.env
+*.pyc
+__pycache__/
+# esta buceta nao ta indo direito
