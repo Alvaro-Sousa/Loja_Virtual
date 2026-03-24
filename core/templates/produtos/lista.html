@@ -8,16 +8,14 @@
     
     <h1>Produtos</h1>
 
-    <nav class="menu">
-        <button type="button" id="btn-editar-modal" class="btn btn-primary">
-    Editar
-</button>  
+<div style="margin-bottom: 20px;">
+        <a href="{% url 'criar_produto' %}" class="btn-adicionar">
+            + Adicionar Novo Produto
+        </a>
+    </div>
 
-<button type="button" id="btn-excluir-modal" class="btn btn-danger" style="background:red;">
-    Excluir
-</button
-    <a href="{% url 'criar_produto' %}">Novo Produto</a>
-</nav>
+    <div class="produto-grid">
+        </div>
     <div class="filtro">
         <input type="text" id="filtro-nome" placeholder="Filtar por nome...">
         <select id="filtro-categoria">
@@ -42,7 +40,7 @@
             {% endif %}
             <h3>{{ produto.nome }}</h3>
             <p>R$ {{ produto.preco }}</p>
-            <button onclick="abrirModal('{{ produto.nome|escapejs }}', '{{ produto.categoria|escapejs }}', '{{ produto.preco }}', '{{ produto.descricao|escapejs }}', '{{ produto.imagem.url }}')">Detalhes</button>
+            <button onclick="abrirModal('{{ produto.pk }}', '{{ produto.nome|escapejs }}', '{{ produto.categoria|escapejs }}', '{{ produto.preco }}', '{{ produto.descricao|escapejs }}', '{{ produto.imagem.url }}')">Detalhes</button>
             <button>Comprar</button>
         </div>
         {% empty %}
@@ -53,28 +51,56 @@
 
 <div class ="modal" id="modal-produto">
     <div class="modal-content">
-        <img id="modal-img"src="" alt="">
+        <img id="modal-img" src="" alt="" style="max-width: 100%; height: auto; margin-bottom: 15px;">
         <h2 id="modal-nome"></h2>
         <p id="modal-categoria"></p>
-        <p id="modal-preco"></p>
-        <p  id="modal-desc"></p>
+        <p id="modal-preco" style="font-weight: bold; color: green;"></p>
+        <p id="modal-desc" style="margin-bottom: 20px;"></p>
+        
+        <div class="modal-footer" style="display: flex; flex-direction: column; gap: 10px;">
+            <button type="button" id="btn-editar-modal" class="btn btn-primary">Editar</button>
+            
+            <button type="button" id="btn-excluir-modal" class="btn btn-danger" style="background:red; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">
+                Excluir
+            </button>
 
-        <button class="modal-close" onclick="fecharModal()">Fechar</button>
-    
+            <button class="modal-close" onclick="fecharModal()" style="margin-top: 10px; background: none; border: none; color: #666; cursor: pointer;">
+                Fechar
+            </button>
+        </div>
     </div>
 </div>
 
 <script>
-function abrirModal(nome, categoria, preco, descricao, imagem){
-    document.getElementById('modal-nome').textContent=nome;
-    document.getElementById('modal-categoria').textContent='Categoria: ' + categoria;
-    document.getElementById('modal-preco').textContent='Preço: R$ '+ preco;
-    document.getElementById('modal-desc').textContent=descricao;
-    document.getElementById('modal-img').src = imagem
-    document.getElementById('modal-produto').style.display='flex';
+function abrirModal(id, nome, categoria, preco, descricao, imagem) {
+    // Preenche os dados básicos
+    document.getElementById('modal-nome').textContent = nome;
+    document.getElementById('modal-categoria').textContent = 'Categoria: ' + categoria;
+    document.getElementById('modal-preco').textContent = 'Preço: R$ ' + preco;
+    document.getElementById('modal-desc').textContent = descricao;
+    document.getElementById('modal-img').src = imagem;
+
+    // Configura o botão de Editar
+    const btnEditar = document.getElementById('btn-editar-modal');
+    if (btnEditar) {
+        btnEditar.onclick = function() {
+            window.location.href = '/editar/' + id + '/';
+        };
+    }
+
+    // Configura o botão de Excluir
+    const btnExcluir = document.getElementById('btn-excluir-modal');
+    if (btnExcluir) {
+        btnExcluir.onclick = function() {
+            window.location.href = '/deletar/' + id + '/';
+        };
+    }
+
+    document.getElementById('modal-produto').style.display = 'flex';
 }
-function fecharModal(){
-    document.getElementById('modal-produto').style.display='none';
+
+function fecharModal() {
+    document.getElementById('modal-produto').style.display = 'none';
 }
 
 //filtro js
