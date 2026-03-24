@@ -1,0 +1,47 @@
+.containerDelete{
+    width: 420px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.containerDelete p{
+    margin: 12px 0;
+}
+
+.containerDelete .produto-img{
+    display: block;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0 16px;
+}
+
+.containerDelete form{
+    margin-top: 12px;
+}
+
+.containerDelete button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #dc3545;
+    color: #fff;
+    cursor: pointer;
+}
+
+.containerDelete a{
+    display: inline-block;
+    margin-top: 14px;
+    color: #007bff;
+    text-decoration: none
+;
+}
+
+.containerDelete a:hover{
+    text-decoration: underline;
+}

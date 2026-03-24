@@ -51,7 +51,7 @@
 
 <div class ="modal" id="modal-produto">
     <div class="modal-content">
-        <img id="modal-img" src="" alt="" style="max-width: 100%; height: auto; margin-bottom: 15px;">
+        <img id="modal-img" src="" alt="" class="produto-img">
         <h2 id="modal-nome"></h2>
         <p id="modal-categoria"></p>
         <p id="modal-preco" style="font-weight: bold; color: green;"></p>
@@ -73,14 +73,14 @@
 
 <script>
 function abrirModal(id, nome, categoria, preco, descricao, imagem) {
-    // Preenche os dados básicos
+    // pra pegar os dados do produto
     document.getElementById('modal-nome').textContent = nome;
     document.getElementById('modal-categoria').textContent = 'Categoria: ' + categoria;
     document.getElementById('modal-preco').textContent = 'Preço: R$ ' + preco;
     document.getElementById('modal-desc').textContent = descricao;
     document.getElementById('modal-img').src = imagem;
 
-    // Configura o botão de Editar
+    // config pra o botão editar
     const btnEditar = document.getElementById('btn-editar-modal');
     if (btnEditar) {
         btnEditar.onclick = function() {
@@ -88,7 +88,7 @@ function abrirModal(id, nome, categoria, preco, descricao, imagem) {
         };
     }
 
-    // Configura o botão de Excluir
+    // configuração do botão excluir
     const btnExcluir = document.getElementById('btn-excluir-modal');
     if (btnExcluir) {
         btnExcluir.onclick = function() {

@@ -13,6 +13,13 @@
         Criar Produto
         {% endif %}
     </h1>
+
+    {% if object and object.imagem %}
+    <div class="imagemAtualBox">
+        <p>Imagem atual:</p>
+        <img src="{{ object.imagem.url }}" alt="{{ object.nome }}" class="imagemAtualProduto">
+    </div>
+    {% endif %}
     
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}

@@ -1,11 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title %} Confirmar exclusão {%endblock%}
+{%block content %}
+<div class = 'containerDelete'>
+    <h1>Confirmar exclusão</h1>
     
-</body>
-</html>
+    <p>Você tem certeza que deseja apagar o produto <strong>{{object.nome}}</strong></p>
+    
+    {%if object.imagem%}
+        <img src="{{object.imagem.url}}" alt="{{object.nome}}" class="produto-img">
+    {%endif%}
+        <p>Preço: R$ {{object.preco}}</p>
+    
+        <form method="post">
+        {%csrf_token%}
+        <button type="submit">Sim</button>
+    </form>
+
+    <a href="{%url 'lista_produtos'%}">Cancelar</a>
+</div>
+{%endblock%} 
