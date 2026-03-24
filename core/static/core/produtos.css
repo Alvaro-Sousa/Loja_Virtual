@@ -7,6 +7,23 @@
     border-radius: 8px;
 }
 
+.btn-adicionar {
+    background-color: #28a745; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn-adicionar:hover {
+    background-color: #218838;
+    color: white;
+}
+
+
 .menu {
     background: #007bff;
     padding: 15px;
