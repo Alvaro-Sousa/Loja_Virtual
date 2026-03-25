@@ -35,9 +35,16 @@
         {%for produto in produtos%}
         <div class="produto-card" data-nome="{{produto.nome}}" data-categoria="{{produto.categoria}}" data-preco="{{produto.preco}}">
             
-            {% if produto.imagem %}
+            {% comment %} {% if produto.imagem %}
                 <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+            {% endif %} {% endcomment %}
+
+            {% if produto.imagem %}
+                <div class="card-img-wrapper">
+                    <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+                </div>
             {% endif %}
+            
             <h3>{{ produto.nome }}</h3>
             <p>R$ {{ produto.preco }}</p>
             <button onclick="abrirModal('{{ produto.pk }}', '{{ produto.nome|escapejs }}', '{{ produto.categoria|escapejs }}', '{{ produto.preco }}', '{{ produto.descricao|escapejs }}', '{{ produto.imagem.url }}')">Detalhes</button>

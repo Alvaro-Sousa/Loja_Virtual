@@ -1,47 +1,87 @@
-.containerDelete{
-    width: 420px;
+/* === Container === */
+.containerDelete {
+    max-width: 480px;
     margin: 60px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
     text-align: center;
 }
 
-.containerDelete p{
-    margin: 12px 0;
+.containerDelete h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #dc2626;
+    margin-bottom: 16px;
 }
 
-.containerDelete .produto-img{
-    display: block;
-    max-width: 200px;
-    height: auto;
-    border-radius: 8px;
-    margin: 10px 0 16px;
+.containerDelete p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 16px;
 }
 
-.containerDelete form{
-    margin-top: 12px;
+.containerDelete strong {
+    color: #222;
 }
 
-.containerDelete button{
+/* === Imagem do produto === */
+/* .containerDelete .produto-img {
     width: 100%;
-    padding: 10px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+} */
+
+.imagemAtualBox {
+    margin-bottom: 20px;
+}
+
+.imagemAtualBox p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.imagemAtualProduto {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+/* === Botão confirmar === */
+.containerDelete form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    background-color: #dc2626;
+    color: white;
     border: none;
     border-radius: 6px;
-    background: #dc3545;
-    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
+    margin-bottom: 12px;
+    transition: background-color 0.2s;
 }
 
-.containerDelete a{
+.containerDelete form button[type="submit"]:hover {
+    background-color: #b91c1c;
+}
+
+/* === Link cancelar === */
+.containerDelete > a {
     display: inline-block;
-    margin-top: 14px;
-    color: #007bff;
-    text-decoration: none
-;
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: none;
 }
 
-.containerDelete a:hover{
+.containerDelete > a:hover {
     text-decoration: underline;
 }

@@ -1,6 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #9b9494;
-        margin: 0;
+/* === Reset e base === */
+* {
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
 }

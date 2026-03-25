@@ -8,9 +8,12 @@
     
     <p>Você tem certeza que deseja apagar o produto <strong>{{object.nome}}</strong></p>
     
-    {%if object.imagem%}
-        <img src="{{object.imagem.url}}" alt="{{object.nome}}" class="produto-img">
-    {%endif%}
+    {% if object and object.imagem %}
+        <div class="imagemAtualBox">
+            <p>Imagem atual:</p>
+            <img src="{{ object.imagem.url }}" alt="{{ object.nome }}" class="imagemAtualProduto">
+        </div>
+    {% endif %}
         <p>Preço: R$ {{object.preco}}</p>
     
         <form method="post">
