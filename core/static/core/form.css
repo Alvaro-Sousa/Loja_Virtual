@@ -1,65 +1,130 @@
-
-/* forms */
-
-
+/* === Container do formulário === */
 .containerForm {
-    width: 400px;
-    margin: 60px auto;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 28px 24px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
-h1 {
-    text-align: center;
+/* === Título === */
+.containerForm h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-form p {
-    margin-bottom: 15px;
+/* === Imagem atual === */
+.imagemAtualBox {
+    margin-bottom: 18px;
 }
 
-input, textarea, select {
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-top: 5px;
-    transition: border 0.3s;
+.imagemAtualBox p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
 }
 
-input:focus, textarea:focus, select:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-
-
-button {
+.imagemAtualProduto {
     width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-a {
+    max-width: 250px;   /* limita no desktop */
+    height: 180px;      /* altura fixa */
+    object-fit: contain; /* mantém proporção sem cortar */
+    
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    padding: 6px;
+    
     display: block;
-    text-align: center;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #007bff;
 }
 
-a:hover {
-    text-decoration: underline;
+/* === Formulário === */
+.containerForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Labels */
+.containerForm label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Inputs, selects, textarea */
+.containerForm input,
+.containerForm select,
+.containerForm textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 14px;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+/* Focus */
+.containerForm input:focus,
+.containerForm select:focus,
+.containerForm textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.12);
+}
+
+/* Input file (imagem) */
+.containerForm input[type="file"] {
+    padding: 6px;
+    cursor: pointer;
+}
+
+/* === Botão salvar === */
+.containerForm button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.containerForm button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+/* === Link voltar === */
+.containerForm a {
+    margin-top: 12px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: color var(--transition);
+}
+
+.containerForm a:hover {
+    color: var(--text);
+}
+
+/* === Erros === */
+.errorlist {
+    list-style: none;
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    background: rgba(214, 48, 48, 0.08);
+    border: 1px solid var(--danger);
+    font-size: 13px;
+    color: var(--danger);
 }

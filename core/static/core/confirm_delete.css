@@ -1,0 +1,87 @@
+
+.containerDelete {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 32px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.containerDelete h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #dc2626;
+    margin-bottom: 16px;
+}
+
+.containerDelete p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 16px;
+}
+
+.containerDelete strong {
+    color: #222;
+}
+
+/* === Imagem do produto === */
+/* .containerDelete .produto-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 16px;
+} */
+
+.imagemAtualBox {
+    margin-bottom: 20px;
+}
+
+.imagemAtualBox p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.imagemAtualProduto {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+
+.containerDelete form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background-color 0.2s;
+}
+
+.containerDelete form button[type="submit"]:hover {
+    background-color: #b91c1c;
+}
+
+/* === Link cancelar === */
+.containerDelete > a {
+    display: inline-block;
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.containerDelete > a:hover {
+    text-decoration: underline;
+}
