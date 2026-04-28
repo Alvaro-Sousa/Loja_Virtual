@@ -1,4 +1,4 @@
-/* === Container === */
+
 .containerDelete {
     max-width: 480px;
     margin: 60px auto;
@@ -54,7 +54,7 @@
     border: 1px solid #e5e7eb;
 }
 
-/* === Botão confirmar === */
+
 .containerDelete form button[type="submit"] {
     display: block;
     width: 100%;
