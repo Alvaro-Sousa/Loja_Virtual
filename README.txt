@@ -26,12 +26,18 @@ Este é um projeto de loja virtual desenvolvida para a disciplina de WEB 1 usand
 6. Acesse em `http://localhost:8000`
 
 ## Estrutura do Projeto 📁
-Loja_Virtual/ ├── core/ # App principal ├── lojaVirtual/ # Configurações do projeto ├── media/ # Arquivos de mídia ├── db.sqlite3 # Banco de dados ├── manage.py # Gerenciador do Django └── requirements.txt # Dependências do projeto
 
+Loja_Virtual/
+├── core/              # App principal
+├── lojaVirtual/       # Configurações do projeto
+├── media/             # Arquivos de mídia
+├── db.sqlite3         # Banco de dados
+├── manage.py          # Gerenciador do Django
+└── requirements.txt   # Dependências do projeto
 
 ## Contato 📞
 - 🐙 GitHub: [Alvaro-Sousa](https://github.com/Alvaro-Sousa)
 - 💼 LinkedIn: [Álvaro Sousa](https://www.linkedin.com/in/%C3%A1lvaro-sousa-136643324/)
 - 📸 Instagram: [@alvru_s](https://www.instagram.com/alvru_s/)
 
-*Desenvolvido com ❤️ por Álvaro Sousa - 2026-04-30*
+*Desenvolvido com ❤️ por Álvaro Sousa & Felipe Gabriel - 2026-04-30*
