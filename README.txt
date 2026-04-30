@@ -2,21 +2,7 @@
 
 👋 Seja bem-vindo à Loja Virtual!
 
-## Sobre Nós
+## Sobre o projeto:
+🚀 Projeto desenvolvido para o primeiro estágio da disciplina de WEB 1 usando Django como framework principal
 
-🚀 A nossa loja oferece uma variedade incrível de produtos para você.
-
-### Nossos Produtos
-
-🛒 Roupas
-📚 Livros
-🎮 Jogos
-
-## Contato
-
-📧 Email: contato@lojavirtual.com
-📍 Endereço: Rua Exemplo, 123, Cidade, Estado
-
-## Agradecimentos
-
-🙏 Obrigado por visitar nossa loja!
+🙏 Obrigado pela visita!
